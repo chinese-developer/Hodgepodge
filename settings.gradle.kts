@@ -38,11 +38,6 @@ pluginManagement {
         snapshotsOnly()
       }
     }
-
-    // JitPack Repository
-    maven {
-      url = uri("https://jitpack.io")
-    }
   }
 }
 
@@ -107,6 +102,11 @@ dependencyResolutionManagement {
       mavenContent {
         snapshotsOnly()
       }
+    }
+
+    // JitPack Repository
+    maven {
+      url = uri("https://jitpack.io")
     }
   }
 }
