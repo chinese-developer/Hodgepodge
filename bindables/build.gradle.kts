@@ -34,3 +34,11 @@ dependencies {
   api(libs.androidx.lifecycle)
   api(libs.androidx.lifecycle.savedstate)
 }
+
+publishing {
+  publications {
+    create<MavenPublication>("mavenAndroid") {
+      from(components["release"])
+    }
+  }
+}

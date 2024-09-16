@@ -12,3 +12,11 @@ dependencies {
   testImplementation(libs.junit)
   testImplementation(libs.robolectric)
 }
+
+publishing {
+  publications {
+    create<MavenPublication>("mavenAndroid") {
+      from(components["release"])
+    }
+  }
+}
