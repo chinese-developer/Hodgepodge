@@ -74,23 +74,14 @@ subprojects {
     }
   }
 
-  // 配置非app模块启用一些实验性功能（如ExperimentalContracts），避免代码中会有警告提示。
-  if (name != "app") {
-    tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
-      kotlinOptions.jvmTarget = bytecodeVersion.toString()
-      kotlinOptions.freeCompilerArgs += listOf(
-        "-Xexplicit-api=strict",
-        "-Xopt-in=kotlin.contracts.ExperimentalContracts"
-      )
-    }
-  }
-
   // 为Kotlin编译任务设置JVM目标版本，并启用一些实验性功能（如Coroutines和Time API）
   tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
     kotlinOptions.jvmTarget = bytecodeVersion.toString()
     kotlinOptions.freeCompilerArgs += listOf(
       "-opt-in=kotlinx.coroutines.ExperimentalCoroutinesApi",
       "-opt-in=kotlin.time.ExperimentalTime",
+      "-Xexplicit-api=strict",
+      "-Xopt-in=kotlin.contracts.ExperimentalContracts"
     )
   }
 

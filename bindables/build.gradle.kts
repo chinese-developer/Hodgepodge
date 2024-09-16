@@ -8,21 +8,11 @@ plugins {
   alias(libs.plugins.kotlin.binary.compatibility)
 }
 
-
 android {
   namespace = "com.component.bindables"
 
   defaultConfig {
     consumerProguardFiles("proguard-rules.pro")
-  }
-
-  compileOptions {
-    sourceCompatibility = JavaVersion.VERSION_17
-    targetCompatibility = JavaVersion.VERSION_17
-  }
-
-  kotlinOptions {
-    jvmTarget = libs.versions.jvmBytecode.get()
   }
 
   buildFeatures {
