@@ -16,6 +16,10 @@ android {
     consumerProguardFiles("proguard-rules.pro")
   }
 
+  kotlinOptions {
+    jvmTarget = "1.8"
+  }
+
   buildFeatures {
     dataBinding = true
   }

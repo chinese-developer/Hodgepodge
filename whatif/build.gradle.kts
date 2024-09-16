@@ -5,6 +5,10 @@ plugins {
 
 android {
   namespace = "com.component.whatif"
+
+  kotlinOptions {
+    jvmTarget = "1.8"
+  }
 }
 
 dependencies {
