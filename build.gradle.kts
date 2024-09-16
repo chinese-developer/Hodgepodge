@@ -36,6 +36,7 @@ private val bytecodeVersion = JavaVersion.toVersion(libs.versions.jvmBytecode.ge
 // subprojects：此块应用于所有子项目，确保每个子项目都应用Spotless插件，用于统一代码格式。
 subprojects {
   apply(plugin = rootProject.libs.plugins.spotless.get().pluginId)
+  apply(plugin = "maven-publish")
 
   // Common Android configurations
   android {
