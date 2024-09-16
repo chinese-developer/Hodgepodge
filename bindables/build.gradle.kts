@@ -40,8 +40,8 @@ afterEvaluate {
     publications {
       create<MavenPublication>("mavenAndroid") {
         from(components["release"])
-        groupId = "com.aiden.component"
-        artifactId = "aiden"
+        groupId = "com.component.bindables"
+        artifactId = "bindables"
         version = "1.0.0"
       }
     }

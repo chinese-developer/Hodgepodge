@@ -18,10 +18,11 @@ afterEvaluate {
     publications {
       create<MavenPublication>("mavenAndroid") {
         from(components["release"])
-        groupId = "com.aiden.component"
-        artifactId = "aiden"
+        groupId = "com.component.whatif"
+        artifactId = "whatif"
         version = "1.0.0"
       }
     }
   }
 }
+
