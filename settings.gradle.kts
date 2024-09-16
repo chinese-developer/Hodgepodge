@@ -38,6 +38,11 @@ pluginManagement {
         snapshotsOnly()
       }
     }
+
+    // JitPack Repository
+    maven {
+      url = uri("https://jitpack.io")
+    }
   }
 }
 
