@@ -35,10 +35,15 @@ dependencies {
   api(libs.androidx.lifecycle.savedstate)
 }
 
-publishing {
-  publications {
-    create<MavenPublication>("mavenAndroid") {
-      from(components["release"])
+afterEvaluate {
+  publishing {
+    publications {
+      create<MavenPublication>("mavenAndroid") {
+        from(components["release"])
+        groupId = "com.aiden.component"
+        artifactId = "aiden"
+        version = "1.0.0"
+      }
     }
   }
 }
