@@ -1,6 +1,6 @@
 [versions]
 targetSdk = "34"
-jvmBytecode = "17"
+jvmBytecode = "11"
 agp = "8.6.0"
 kotlin = "1.9.25"
 androidxFragment = "1.8.3"
