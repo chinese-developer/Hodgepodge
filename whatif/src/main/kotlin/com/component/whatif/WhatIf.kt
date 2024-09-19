@@ -18,7 +18,7 @@ import kotlin.contracts.contract
  */
 @JvmSynthetic
 @WhatIfInlineOnly
-public inline fun <T> T.whatIf(
+inline fun <T> T.whatIf(
   given: (T) -> Boolean?,
   whatIf: () -> Unit,
 ): T {
@@ -38,7 +38,7 @@ public inline fun <T> T.whatIf(
  */
 @JvmSynthetic
 @WhatIfInlineOnly
-public inline fun <T> T.whatIf(
+inline fun <T> T.whatIf(
   given: (T) -> Boolean?,
   whatIf: () -> Unit,
   whatIfNot: () -> Unit,
@@ -62,7 +62,7 @@ public inline fun <T> T.whatIf(
  */
 @JvmSynthetic
 @WhatIfInlineOnly
-public inline fun <T> T.whatIf(
+inline fun <T> T.whatIf(
   given: Boolean?,
   whatIf: T.() -> Unit,
 ): T {
@@ -82,7 +82,7 @@ public inline fun <T> T.whatIf(
  */
 @JvmSynthetic
 @WhatIfInlineOnly
-public inline fun <T> T.whatIf(
+inline fun <T> T.whatIf(
   given: Boolean?,
   whatIf: T.() -> Unit,
   whatIfNot: T.() -> Unit,
@@ -106,7 +106,7 @@ public inline fun <T> T.whatIf(
  */
 @JvmSynthetic
 @WhatIfInlineOnly
-public inline fun Boolean?.whatIf(
+inline fun Boolean?.whatIf(
   whatIf: () -> Unit,
 ): Boolean? {
   contract {
@@ -126,7 +126,7 @@ public inline fun Boolean?.whatIf(
  */
 @JvmSynthetic
 @WhatIfInlineOnly
-public inline fun Boolean?.whatIf(
+inline fun Boolean?.whatIf(
   whatIf: () -> Unit,
   whatIfNot: () -> Unit,
 ): Boolean? {
@@ -149,7 +149,7 @@ public inline fun Boolean?.whatIf(
  */
 @JvmSynthetic
 @WhatIfInlineOnly
-public inline fun <T, R> T?.whatIfNotNullWith(
+inline fun <T, R> T?.whatIfNotNullWith(
   default: R,
   whatIf: (T) -> R,
 ): R {
@@ -171,7 +171,7 @@ public inline fun <T, R> T?.whatIfNotNullWith(
  */
 @JvmSynthetic
 @WhatIfInlineOnly
-public inline fun <T, R> T.whatIfNotNullWith(
+inline fun <T, R> T.whatIfNotNullWith(
   given: Boolean?,
   default: R,
   whatIf: (T) -> R,
@@ -195,7 +195,7 @@ public inline fun <T, R> T.whatIfNotNullWith(
  */
 @JvmSynthetic
 @WhatIfInlineOnly
-public inline fun <T, R> T.whatIfNotNullWith(
+inline fun <T, R> T.whatIfNotNullWith(
   given: Boolean?,
   whatIf: (T) -> R,
   whatIfNot: (T) -> R,
@@ -217,7 +217,7 @@ public inline fun <T, R> T.whatIfNotNullWith(
  */
 @JvmSynthetic
 @WhatIfInlineOnly
-public inline fun <T> T?.whatIfNotNull(
+inline fun <T> T?.whatIfNotNull(
   whatIf: (T) -> Unit,
 ): T? {
   contract {
@@ -238,7 +238,7 @@ public inline fun <T> T?.whatIfNotNull(
  */
 @JvmSynthetic
 @WhatIfInlineOnly
-public inline fun <T> T?.whatIfNotNull(
+inline fun <T> T?.whatIfNotNull(
   whatIf: (T) -> Unit,
   whatIfNot: () -> Unit,
 ): T? {
@@ -256,7 +256,7 @@ public inline fun <T> T?.whatIfNotNull(
 
 @JvmSynthetic
 @WhatIfInlineOnly
-public inline fun <T, R> T?.whatIfNotNullWith(
+inline fun <T, R> T?.whatIfNotNullWith(
   whatIf: (T) -> R,
   whatIfNot: (T?) -> R,
 ): R {
@@ -283,7 +283,7 @@ public inline fun <T, R> T?.whatIfNotNullWith(
  */
 @JvmSynthetic
 @WhatIfInlineOnly
-public inline fun <reified R> Any?.whatIfNotNullAs(
+inline fun <reified R> Any?.whatIfNotNullAs(
   whatIf: (R) -> Unit,
 ): Any? {
   contract {
@@ -311,7 +311,7 @@ public inline fun <reified R> Any?.whatIfNotNullAs(
  */
 @JvmSynthetic
 @WhatIfInlineOnly
-public inline fun <reified R> Any?.whatIfNotNullAs(
+inline fun <reified R> Any?.whatIfNotNullAs(
   whatIf: (R) -> Unit,
   whatIfNot: () -> Unit,
 ): Any? {
@@ -334,7 +334,7 @@ public inline fun <reified R> Any?.whatIfNotNullAs(
  */
 @JvmSynthetic
 @WhatIfInlineOnly
-public inline fun Boolean?.whatIfElse(
+inline fun Boolean?.whatIfElse(
   whatIf: () -> Unit,
 ): Boolean? {
   contract {
@@ -353,7 +353,7 @@ public inline fun Boolean?.whatIfElse(
  */
 @JvmSynthetic
 @WhatIfInlineOnly
-public inline fun Boolean?.whatIfAnd(
+inline fun Boolean?.whatIfAnd(
   predicate: Boolean?,
   whatIf: () -> Unit,
 ): Boolean? {
@@ -373,7 +373,7 @@ public inline fun Boolean?.whatIfAnd(
  */
 @JvmSynthetic
 @WhatIfInlineOnly
-public inline fun Boolean?.whatIfOr(
+inline fun Boolean?.whatIfOr(
   predicate: Boolean?,
   whatIf: () -> Unit,
 ): Boolean? {

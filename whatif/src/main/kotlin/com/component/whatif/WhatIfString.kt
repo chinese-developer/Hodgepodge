@@ -13,7 +13,7 @@ import kotlin.contracts.contract
  */
 @JvmSynthetic
 @WhatIfInlineOnly
-public inline fun String?.whatIfNotNullOrEmpty(
+inline fun String?.whatIfNotNullOrEmpty(
   whatIf: (String) -> Unit,
 ): String? {
   contract {
@@ -34,7 +34,7 @@ public inline fun String?.whatIfNotNullOrEmpty(
  */
 @JvmSynthetic
 @WhatIfInlineOnly
-public inline fun String?.whatIfNotNullOrEmpty(
+inline fun String?.whatIfNotNullOrEmpty(
   whatIf: (String) -> Unit,
   whatIfNot: () -> Unit,
 ): String? {

@@ -14,8 +14,7 @@ import kotlin.reflect.KProperty
  *
  * @return A delegation property [BindingPropertyIdWithDefaultValue].
  */
-@BindingPropertyDelegate
-public fun <T> bindingProperty(defaultValue: T): BindingPropertyIdWithDefaultValue<T> =
+@BindingPropertyDelegate fun <T> bindingProperty(defaultValue: T): BindingPropertyIdWithDefaultValue<T> =
   BindingPropertyIdWithDefaultValue(defaultValue)
 
 /**
@@ -23,12 +22,12 @@ public fun <T> bindingProperty(defaultValue: T): BindingPropertyIdWithDefaultVal
  *
  * @param value A default value should be initialized.
  */
-public class BindingPropertyIdWithDefaultValue<T>(
+class BindingPropertyIdWithDefaultValue<T>(
   private var value: T
 ) {
-  public operator fun getValue(bindingObservable: BindingObservable, property: KProperty<*>): T = value
+  operator fun getValue(bindingObservable: BindingObservable, property: KProperty<*>): T = value
 
-  public operator fun setValue(bindingObservable: BindingObservable, property: KProperty<*>, value: T) {
+  operator fun setValue(bindingObservable: BindingObservable, property: KProperty<*>, value: T) {
     if (this.value != value) {
       this.value = value
       bindingObservable.notifyPropertyChanged(property.bindingId)
@@ -46,8 +45,7 @@ public class BindingPropertyIdWithDefaultValue<T>(
  *
  * @return A delegation property [SavedStateHandleBindingProperty].
  */
-@BindingPropertyDelegate
-public fun <T> SavedStateHandle.asBindingProperty(key: String): SavedStateHandleBindingProperty<T> =
+@BindingPropertyDelegate fun <T> SavedStateHandle.asBindingProperty(key: String): SavedStateHandleBindingProperty<T> =
   SavedStateHandleBindingProperty(this, key)
 
 /**
@@ -56,13 +54,13 @@ public fun <T> SavedStateHandle.asBindingProperty(key: String): SavedStateHandle
  * @param savedStateHandle A handle to saved state passed down to [androidx.lifecycle.ViewModel].
  * @param key A key for finding saved value.
  */
-public class SavedStateHandleBindingProperty<T>(
+class SavedStateHandleBindingProperty<T>(
   private val savedStateHandle: SavedStateHandle,
   private var key: String
 ) {
-  public operator fun getValue(bindingObservable: BindingObservable, property: KProperty<*>): T? = savedStateHandle[key]
+  operator fun getValue(bindingObservable: BindingObservable, property: KProperty<*>): T? = savedStateHandle[key]
 
-  public operator fun setValue(bindingObservable: BindingObservable, property: KProperty<*>, value: T?) {
+  operator fun setValue(bindingObservable: BindingObservable, property: KProperty<*>, value: T?) {
     savedStateHandle[key] = value
     bindingObservable.notifyPropertyChanged(property.bindingId)
   }

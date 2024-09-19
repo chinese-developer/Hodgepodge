@@ -13,7 +13,7 @@ import kotlin.contracts.contract
  */
 @JvmSynthetic
 @WhatIfInlineOnly
-public inline fun <T> List<T>?.whatIfNotNullOrEmpty(
+inline fun <T> List<T>?.whatIfNotNullOrEmpty(
   whatIf: (List<T>) -> Unit,
 ): List<T>? {
   contract {
@@ -34,7 +34,7 @@ public inline fun <T> List<T>?.whatIfNotNullOrEmpty(
  */
 @JvmSynthetic
 @WhatIfInlineOnly
-public inline fun <T> List<T>?.whatIfNotNullOrEmpty(
+inline fun <T> List<T>?.whatIfNotNullOrEmpty(
   whatIf: (List<T>) -> Unit,
   whatIfNot: () -> Unit,
 ): List<T>? {
@@ -57,7 +57,7 @@ public inline fun <T> List<T>?.whatIfNotNullOrEmpty(
  */
 @JvmSynthetic
 @WhatIfInlineOnly
-public inline fun <T> Set<T>?.whatIfNotNullOrEmpty(
+inline fun <T> Set<T>?.whatIfNotNullOrEmpty(
   whatIf: (Set<T>) -> Unit,
 ): Set<T>? {
   contract {
@@ -78,7 +78,7 @@ public inline fun <T> Set<T>?.whatIfNotNullOrEmpty(
  */
 @JvmSynthetic
 @WhatIfInlineOnly
-public inline fun <T> Set<T>?.whatIfNotNullOrEmpty(
+inline fun <T> Set<T>?.whatIfNotNullOrEmpty(
   whatIf: (Set<T>) -> Unit,
   whatIfNot: () -> Unit,
 ): Set<T>? {
@@ -101,7 +101,7 @@ public inline fun <T> Set<T>?.whatIfNotNullOrEmpty(
  */
 @JvmSynthetic
 @WhatIfInlineOnly
-public inline fun <T, R> Map<T, R>?.whatIfNotNullOrEmpty(
+inline fun <T, R> Map<T, R>?.whatIfNotNullOrEmpty(
   whatIf: (Map<T, R>) -> Unit,
 ): Map<T, R>? {
   contract {
@@ -122,7 +122,7 @@ public inline fun <T, R> Map<T, R>?.whatIfNotNullOrEmpty(
  */
 @JvmSynthetic
 @WhatIfInlineOnly
-public inline fun <T, R> Map<T, R>?.whatIfNotNullOrEmpty(
+inline fun <T, R> Map<T, R>?.whatIfNotNullOrEmpty(
   whatIf: (Map<T, R>) -> Unit,
   whatIfNot: () -> Unit,
 ): Map<T, R>? {
@@ -148,7 +148,7 @@ public inline fun <T, R> Map<T, R>?.whatIfNotNullOrEmpty(
  */
 @JvmSynthetic
 @WhatIfInlineOnly
-public inline fun <reified T : MutableCollection<E>, reified E> T.addWhatIfNotNull(
+inline fun <reified T : MutableCollection<E>, reified E> T.addWhatIfNotNull(
   element: E?,
   whatIf: (T) -> Unit,
 ): T {
@@ -174,7 +174,7 @@ public inline fun <reified T : MutableCollection<E>, reified E> T.addWhatIfNotNu
  */
 @JvmSynthetic
 @WhatIfInlineOnly
-public inline fun <reified T : MutableCollection<E>, reified E> T.addWhatIfNotNull(
+inline fun <reified T : MutableCollection<E>, reified E> T.addWhatIfNotNull(
   element: E?,
   whatIf: (T) -> Unit,
   whatIfNot: (T) -> Unit,
@@ -205,7 +205,7 @@ public inline fun <reified T : MutableCollection<E>, reified E> T.addWhatIfNotNu
  */
 @JvmSynthetic
 @WhatIfInlineOnly
-public inline fun <reified T : MutableCollection<E>, reified E> T.addAllWhatIfNotNull(
+inline fun <reified T : MutableCollection<E>, reified E> T.addAllWhatIfNotNull(
   element: Collection<E>?,
   whatIf: (T) -> Unit,
 ): T {
@@ -231,7 +231,7 @@ public inline fun <reified T : MutableCollection<E>, reified E> T.addAllWhatIfNo
  */
 @JvmSynthetic
 @WhatIfInlineOnly
-public inline fun <reified T : MutableCollection<E>, reified E> T.addAllWhatIfNotNull(
+inline fun <reified T : MutableCollection<E>, reified E> T.addAllWhatIfNotNull(
   element: Collection<E>?,
   whatIf: (T) -> Unit,
   whatIfNot: (T) -> Unit,
@@ -262,7 +262,7 @@ public inline fun <reified T : MutableCollection<E>, reified E> T.addAllWhatIfNo
  */
 @JvmSynthetic
 @WhatIfInlineOnly
-public inline fun <reified T : MutableCollection<E>, reified E> T.removeWhatIfNotNull(
+inline fun <reified T : MutableCollection<E>, reified E> T.removeWhatIfNotNull(
   element: E?,
   whatIf: (T) -> Unit,
 ): T {
@@ -288,7 +288,7 @@ public inline fun <reified T : MutableCollection<E>, reified E> T.removeWhatIfNo
  */
 @JvmSynthetic
 @WhatIfInlineOnly
-public inline fun <reified T : MutableCollection<E>, reified E> T.removeWhatIfNotNull(
+inline fun <reified T : MutableCollection<E>, reified E> T.removeWhatIfNotNull(
   element: E?,
   whatIf: (T) -> Unit,
   whatIfNot: (T) -> Unit,
@@ -319,7 +319,7 @@ public inline fun <reified T : MutableCollection<E>, reified E> T.removeWhatIfNo
  */
 @JvmSynthetic
 @WhatIfInlineOnly
-public inline fun <reified T : MutableCollection<E>, reified E> T.removeAllWhatIfNotNull(
+inline fun <reified T : MutableCollection<E>, reified E> T.removeAllWhatIfNotNull(
   element: Collection<E>?,
   whatIf: (T) -> Unit,
 ): T {
@@ -345,7 +345,7 @@ public inline fun <reified T : MutableCollection<E>, reified E> T.removeAllWhatI
  */
 @JvmSynthetic
 @WhatIfInlineOnly
-public inline fun <reified T : MutableCollection<E>, reified E> T.removeAllWhatIfNotNull(
+inline fun <reified T : MutableCollection<E>, reified E> T.removeAllWhatIfNotNull(
   element: Collection<E>?,
   whatIf: (T) -> Unit,
   whatIfNot: (T) -> Unit,
@@ -356,7 +356,7 @@ public inline fun <reified T : MutableCollection<E>, reified E> T.removeAllWhatI
   }
   element?.whatIfNotNull(
     whatIf = {
-      removeAll(it)
+      removeAll(it.toSet())
       whatIf(this)
     },
     whatIfNot = {
@@ -375,7 +375,7 @@ public inline fun <reified T : MutableCollection<E>, reified E> T.removeAllWhatI
  */
 @JvmSynthetic
 @WhatIfInlineOnly
-public inline fun Iterable<Boolean?>.whatIfAnd(
+inline fun Iterable<Boolean?>.whatIfAnd(
   whatIf: () -> Unit,
 ): Iterable<Boolean?> {
   contract {
@@ -397,7 +397,7 @@ public inline fun Iterable<Boolean?>.whatIfAnd(
  */
 @JvmSynthetic
 @WhatIfInlineOnly
-public inline fun Iterable<Boolean?>.whatIfAnd(
+inline fun Iterable<Boolean?>.whatIfAnd(
   whatIf: () -> Unit,
   whatIfNot: (() -> Unit),
 ): Iterable<Boolean?> {
@@ -433,7 +433,7 @@ public inline fun Iterable<Boolean?>.whatIfAnd(
  */
 @JvmSynthetic
 @WhatIfInlineOnly
-public inline fun Iterable<Boolean?>.whatIfOr(
+inline fun Iterable<Boolean?>.whatIfOr(
   whatIf: () -> Unit,
 ): Iterable<Boolean?> {
   contract {
@@ -455,7 +455,7 @@ public inline fun Iterable<Boolean?>.whatIfOr(
  */
 @JvmSynthetic
 @WhatIfInlineOnly
-public inline fun Iterable<Boolean?>.whatIfOr(
+inline fun Iterable<Boolean?>.whatIfOr(
   whatIf: () -> Unit,
   whatIfNot: (() -> Unit),
 ): Iterable<Boolean?> {

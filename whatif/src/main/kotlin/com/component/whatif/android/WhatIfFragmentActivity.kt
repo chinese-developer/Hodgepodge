@@ -16,7 +16,7 @@ import kotlin.contracts.contract
  */
 @JvmSynthetic
 @WhatIfInlineOnly
-public inline fun <reified T : Fragment> FragmentActivity.whatIfFindFragment(
+inline fun <reified T : Fragment> FragmentActivity.whatIfFindFragment(
   @IdRes id: Int,
   whatIf: (T) -> Unit,
 ) {
@@ -36,7 +36,7 @@ public inline fun <reified T : Fragment> FragmentActivity.whatIfFindFragment(
  */
 @JvmSynthetic
 @WhatIfInlineOnly
-public inline fun <reified T : Fragment> FragmentActivity.whatIfFindFragment(
+inline fun <reified T : Fragment> FragmentActivity.whatIfFindFragment(
   @IdRes id: Int,
   whatIf: (T) -> Unit,
   whatIfNot: () -> Unit,
@@ -55,7 +55,7 @@ public inline fun <reified T : Fragment> FragmentActivity.whatIfFindFragment(
  */
 @JvmSynthetic
 @WhatIfInlineOnly
-public inline fun <reified T : Fragment> FragmentActivity.whatIfFindFragment(
+inline fun <reified T : Fragment> FragmentActivity.whatIfFindFragment(
   tag: String?,
   whatIf: (T) -> Unit,
 ) {
@@ -75,7 +75,7 @@ public inline fun <reified T : Fragment> FragmentActivity.whatIfFindFragment(
  */
 @JvmSynthetic
 @WhatIfInlineOnly
-public inline fun <reified T : Fragment> FragmentActivity.whatIfFindFragment(
+inline fun <reified T : Fragment> FragmentActivity.whatIfFindFragment(
   tag: String?,
   whatIf: (T) -> Unit,
   whatIfNot: () -> Unit,

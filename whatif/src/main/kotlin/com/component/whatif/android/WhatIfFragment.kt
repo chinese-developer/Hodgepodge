@@ -22,7 +22,7 @@ import kotlin.contracts.contract
  */
 @JvmSynthetic
 @WhatIfInlineOnly
-public inline fun Fragment?.whatIfNotNullContext(
+inline fun Fragment?.whatIfNotNullContext(
   whatIf: (Context) -> Unit,
 ) {
   contract {
@@ -42,7 +42,7 @@ public inline fun Fragment?.whatIfNotNullContext(
  */
 @JvmSynthetic
 @WhatIfInlineOnly
-public inline fun Fragment?.whatIfNotNullContext(
+inline fun Fragment?.whatIfNotNullContext(
   whatIf: (Context) -> Unit,
   whatIfNot: () -> Unit,
 ) {
@@ -59,7 +59,7 @@ public inline fun Fragment?.whatIfNotNullContext(
  */
 @JvmSynthetic
 @WhatIfInlineOnly
-public inline fun Fragment?.whatIfNotNullActivity(
+inline fun Fragment?.whatIfNotNullActivity(
   whatIf: (FragmentActivity) -> Unit,
 ) {
   contract {
@@ -79,7 +79,7 @@ public inline fun Fragment?.whatIfNotNullActivity(
  */
 @JvmSynthetic
 @WhatIfInlineOnly
-public inline fun Fragment?.whatIfNotNullActivity(
+inline fun Fragment?.whatIfNotNullActivity(
   whatIf: (FragmentActivity) -> Unit,
   whatIfNot: () -> Unit,
 ) {
@@ -100,7 +100,7 @@ public inline fun Fragment?.whatIfNotNullActivity(
  */
 @JvmSynthetic
 @WhatIfInlineOnly
-public inline fun Fragment?.whatIfHasArguments(
+inline fun Fragment?.whatIfHasArguments(
   whatIf: (Bundle) -> Unit,
 ) {
   contract {
@@ -117,7 +117,7 @@ public inline fun Fragment?.whatIfHasArguments(
  */
 @JvmSynthetic
 @WhatIfInlineOnly
-public inline fun Fragment?.whatIfHasArguments(
+inline fun Fragment?.whatIfHasArguments(
   whatIf: (Bundle) -> Unit,
   whatIfNot: () -> Unit,
 ) {
@@ -135,7 +135,7 @@ public inline fun Fragment?.whatIfHasArguments(
  */
 @JvmSynthetic
 @WhatIfInlineOnly
-public inline fun <reified T> Fragment?.whatIfFindParentInterface(
+inline fun <reified T> Fragment?.whatIfFindParentInterface(
   whatIf: (T) -> Unit,
 ) {
   contract {
@@ -152,7 +152,7 @@ public inline fun <reified T> Fragment?.whatIfFindParentInterface(
  */
 @JvmSynthetic
 @WhatIfInlineOnly
-public inline fun <reified T> Fragment?.whatIfFindParentInterface(
+inline fun <reified T> Fragment?.whatIfFindParentInterface(
   whatIf: (T) -> Unit,
   whatIfNot: () -> Unit,
 ) {

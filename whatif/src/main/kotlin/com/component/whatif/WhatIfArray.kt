@@ -13,7 +13,7 @@ import kotlin.contracts.contract
  */
 @JvmSynthetic
 @WhatIfInlineOnly
-public inline fun <T> Array<out T>?.whatIfNotNullOrEmpty(
+inline fun <T> Array<out T>?.whatIfNotNullOrEmpty(
   whatIf: (Array<out T>) -> Unit,
 ): Array<out T>? {
   contract {
@@ -34,7 +34,7 @@ public inline fun <T> Array<out T>?.whatIfNotNullOrEmpty(
  */
 @JvmSynthetic
 @WhatIfInlineOnly
-public inline fun <T> Array<out T>?.whatIfNotNullOrEmpty(
+inline fun <T> Array<out T>?.whatIfNotNullOrEmpty(
   whatIf: (Array<out T>) -> Unit,
   whatIfNot: () -> Unit,
 ): Array<out T>? {
@@ -57,7 +57,7 @@ public inline fun <T> Array<out T>?.whatIfNotNullOrEmpty(
  */
 @JvmSynthetic
 @WhatIfInlineOnly
-public inline fun ByteArray?.whatIfNotNullOrEmpty(
+inline fun ByteArray?.whatIfNotNullOrEmpty(
   whatIf: (ByteArray) -> Unit,
 ): ByteArray? {
   contract {
@@ -77,7 +77,7 @@ public inline fun ByteArray?.whatIfNotNullOrEmpty(
  */
 @JvmSynthetic
 @WhatIfInlineOnly
-public inline fun ByteArray?.whatIfNotNullOrEmpty(
+inline fun ByteArray?.whatIfNotNullOrEmpty(
   whatIf: (ByteArray) -> Unit,
   whatIfNot: () -> Unit,
 ): ByteArray? {
@@ -100,7 +100,7 @@ public inline fun ByteArray?.whatIfNotNullOrEmpty(
  */
 @JvmSynthetic
 @WhatIfInlineOnly
-public inline fun ShortArray?.whatIfNotNullOrEmpty(
+inline fun ShortArray?.whatIfNotNullOrEmpty(
   whatIf: (ShortArray) -> Unit,
 ): ShortArray? {
   contract {
@@ -121,7 +121,7 @@ public inline fun ShortArray?.whatIfNotNullOrEmpty(
  */
 @JvmSynthetic
 @WhatIfInlineOnly
-public inline fun ShortArray?.whatIfNotNullOrEmpty(
+inline fun ShortArray?.whatIfNotNullOrEmpty(
   whatIf: (ShortArray) -> Unit,
   whatIfNot: () -> Unit,
 ): ShortArray? {
@@ -144,7 +144,7 @@ public inline fun ShortArray?.whatIfNotNullOrEmpty(
  */
 @JvmSynthetic
 @WhatIfInlineOnly
-public inline fun IntArray?.whatIfNotNullOrEmpty(
+inline fun IntArray?.whatIfNotNullOrEmpty(
   whatIf: (IntArray) -> Unit,
 ): IntArray? {
   contract {
@@ -165,7 +165,7 @@ public inline fun IntArray?.whatIfNotNullOrEmpty(
  */
 @JvmSynthetic
 @WhatIfInlineOnly
-public inline fun IntArray?.whatIfNotNullOrEmpty(
+inline fun IntArray?.whatIfNotNullOrEmpty(
   whatIf: (IntArray) -> Unit,
   whatIfNot: () -> Unit,
 ): IntArray? {
@@ -188,7 +188,7 @@ public inline fun IntArray?.whatIfNotNullOrEmpty(
  */
 @JvmSynthetic
 @WhatIfInlineOnly
-public inline fun LongArray?.whatIfNotNullOrEmpty(
+inline fun LongArray?.whatIfNotNullOrEmpty(
   whatIf: (LongArray) -> Unit,
 ): LongArray? {
   contract {
@@ -209,7 +209,7 @@ public inline fun LongArray?.whatIfNotNullOrEmpty(
  */
 @JvmSynthetic
 @WhatIfInlineOnly
-public inline fun LongArray?.whatIfNotNullOrEmpty(
+inline fun LongArray?.whatIfNotNullOrEmpty(
   whatIf: (LongArray) -> Unit,
   whatIfNot: () -> Unit,
 ): LongArray? {
@@ -232,7 +232,7 @@ public inline fun LongArray?.whatIfNotNullOrEmpty(
  */
 @JvmSynthetic
 @WhatIfInlineOnly
-public inline fun FloatArray?.whatIfNotNullOrEmpty(
+inline fun FloatArray?.whatIfNotNullOrEmpty(
   whatIf: (FloatArray) -> Unit,
 ): FloatArray? {
   contract {
@@ -253,7 +253,7 @@ public inline fun FloatArray?.whatIfNotNullOrEmpty(
  */
 @JvmSynthetic
 @WhatIfInlineOnly
-public inline fun FloatArray?.whatIfNotNullOrEmpty(
+inline fun FloatArray?.whatIfNotNullOrEmpty(
   whatIf: (FloatArray) -> Unit,
   whatIfNot: () -> Unit,
 ): FloatArray? {
@@ -276,7 +276,7 @@ public inline fun FloatArray?.whatIfNotNullOrEmpty(
  */
 @JvmSynthetic
 @WhatIfInlineOnly
-public inline fun DoubleArray?.whatIfNotNullOrEmpty(
+inline fun DoubleArray?.whatIfNotNullOrEmpty(
   whatIf: (DoubleArray) -> Unit,
 ): DoubleArray? {
   contract {
@@ -297,7 +297,7 @@ public inline fun DoubleArray?.whatIfNotNullOrEmpty(
  */
 @JvmSynthetic
 @WhatIfInlineOnly
-public inline fun DoubleArray?.whatIfNotNullOrEmpty(
+inline fun DoubleArray?.whatIfNotNullOrEmpty(
   whatIf: (DoubleArray) -> Unit,
   whatIfNot: () -> Unit,
 ): DoubleArray? {
@@ -320,7 +320,7 @@ public inline fun DoubleArray?.whatIfNotNullOrEmpty(
  */
 @JvmSynthetic
 @WhatIfInlineOnly
-public inline fun BooleanArray?.whatIfNotNullOrEmpty(
+inline fun BooleanArray?.whatIfNotNullOrEmpty(
   whatIf: (BooleanArray) -> Unit,
 ): BooleanArray? {
   contract {
@@ -341,7 +341,7 @@ public inline fun BooleanArray?.whatIfNotNullOrEmpty(
  */
 @JvmSynthetic
 @WhatIfInlineOnly
-public inline fun BooleanArray?.whatIfNotNullOrEmpty(
+inline fun BooleanArray?.whatIfNotNullOrEmpty(
   whatIf: (BooleanArray) -> Unit,
   whatIfNot: () -> Unit,
 ): BooleanArray? {
@@ -364,7 +364,7 @@ public inline fun BooleanArray?.whatIfNotNullOrEmpty(
  */
 @JvmSynthetic
 @WhatIfInlineOnly
-public inline fun CharArray?.whatIfNotNullOrEmpty(
+inline fun CharArray?.whatIfNotNullOrEmpty(
   whatIf: (CharArray) -> Unit,
 ): CharArray? {
   contract {
@@ -385,7 +385,7 @@ public inline fun CharArray?.whatIfNotNullOrEmpty(
  */
 @JvmSynthetic
 @WhatIfInlineOnly
-public inline fun CharArray?.whatIfNotNullOrEmpty(
+inline fun CharArray?.whatIfNotNullOrEmpty(
   whatIf: (CharArray) -> Unit,
   whatIfNot: () -> Unit,
 ): CharArray? {

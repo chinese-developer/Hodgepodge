@@ -1,3 +1,5 @@
+@file:Suppress("SpellCheckingInspection")
+
 package com.component.bindables
 
 import androidx.databinding.Observable
@@ -11,7 +13,7 @@ import kotlin.reflect.KProperty
  * We can register an observable property using [androidx.databinding.Bindable] annotation and
  * [bindingProperty] delegates. The getter for an observable property should be annotated with [androidx.databinding.Bindable].
  */
-public abstract class BindingViewModel : ViewModel(), BindingObservable {
+abstract class BindingViewModel : ViewModel(), BindingObservable {
 
   /** Synchronization registry lock. */
   private val lock: Any = Any()

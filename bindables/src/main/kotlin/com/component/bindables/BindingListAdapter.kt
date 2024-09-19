@@ -16,16 +16,15 @@ import kotlin.reflect.KProperty
  * We can register an observable property using [androidx.databinding.Bindable] annotation and
  * [bindingProperty] delegates. The getter for an observable property should be annotated with [androidx.databinding.Bindable].
  */
-public abstract class BindingListAdapter<T, VH : RecyclerView.ViewHolder>(
-  public val callback: DiffUtil.ItemCallback<T>
+abstract class BindingListAdapter<T, VH : RecyclerView.ViewHolder>(
+  callback: DiffUtil.ItemCallback<T>
 ) : ListAdapter<T, VH>(callback), BindingObservable {
 
   /** 在多线程环境中，防止并发访问 [propertyCallbacks] 时引发数据竞争问题。*/
   private val lock: Any = Any()
 
   /** 定义一个可观察的 [isSubmitted] 属性，初始值为 false。当 [isSubmitted] 值发生变化时，调用 [notifyPropertyChanged] 来通知数据绑定系统。*/
-  @get:Bindable
-  public var isSubmitted: Boolean = false
+  @get:Bindable var isSubmitted: Boolean = false
     private set(value) {
       if (field != value) {
         field = value

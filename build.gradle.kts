@@ -81,7 +81,6 @@ subprojects {
     kotlinOptions.freeCompilerArgs += listOf(
       "-opt-in=kotlinx.coroutines.ExperimentalCoroutinesApi",
       "-opt-in=kotlin.time.ExperimentalTime",
-      "-Xexplicit-api=strict",
       "-Xopt-in=kotlin.contracts.ExperimentalContracts"
     )
   }
@@ -96,10 +95,12 @@ subprojects {
     kotlin {
       target("**/*.kt")
       targetExclude(buildDirectory)
+      // 这个方法允许你覆盖 .editorconfig 文件中的一些设置，用于格式化 Kotlin 代码
       ktlint().editorConfigOverride(
+        // "disabled_rules" to "property-naming" 禁用 klint 编码规范检查
         mapOf(
-          "indent_size" to "2",
-          "continuation_indent_size" to "2"
+          "indent_size" to "2", // 代表缩进的大小，设置为 2，即每次缩进使用 2 个空格。这意味着代码的缩进将采用 2 个空格，而不是默认的 4 个或其他大小。
+          "continuation_indent_size" to "2" // 代表多行表达式（如函数调用或参数列表分多行书写时）的缩进大小。这里也设置为 2，表示多行表达式的第二行及后续行相对于第一行的缩进大小为 2 个空格。
         )
       )
       licenseHeaderFile(rootProject.file("spotless/spotless.license.kt"))

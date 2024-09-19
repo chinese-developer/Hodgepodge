@@ -12,7 +12,7 @@ import android.util.Log
  * A binding initialization provider for binding `@Bindable` properties when an application is started.
  * This initialization provider will be registered on the application as a content provider.
  */
-public class BindingInitProvider : ContentProvider() {
+class BindingInitProvider : ContentProvider() {
 
   override fun onCreate(): Boolean {
     val fieldSize = BindingManager.bind<BR>()

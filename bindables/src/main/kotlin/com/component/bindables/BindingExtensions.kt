@@ -16,8 +16,7 @@ import kotlin.reflect.KProperty
  *
  * @return T A DataBinding class that inflated using the [layoutRes].
  */
-@BindingOnly
-public fun <T : ViewDataBinding> ViewGroup.binding(
+@BindingOnly fun <T : ViewDataBinding> ViewGroup.binding(
   @LayoutRes layoutRes: Int,
   attachToParent: Boolean = false
 ): T {
@@ -36,7 +35,7 @@ public fun <T : ViewDataBinding> ViewGroup.binding(
  * @return T A DataBinding class that inflated using the [layoutRes].
  */
 @BindingOnly
-public inline fun <T : ViewDataBinding> ViewGroup.binding(
+inline fun <T : ViewDataBinding> ViewGroup.binding(
   @LayoutRes layoutRes: Int,
   attachToParent: Boolean = false,
   block: T.() -> Unit
